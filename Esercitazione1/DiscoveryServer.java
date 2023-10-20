@@ -7,10 +7,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
 
-import main.RowSwapServer;
-
 public class DiscoveryServer {
-
 	/*
 	 * DiscoveryServer portaDiscoveryServer
 	 * nomefile1 port1... (tutte coppie di argomenti file e porta)
