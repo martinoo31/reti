@@ -78,15 +78,20 @@ public class Client{
 										}
 										System.out.println("Numero totale di byte:" + buffer);
 									}*/
-                                    try (DataInputStream src = new DataInputStream(new FileInputStream(allFiles[i]))) {
+                                DataInputStream src = new DataInputStream(new FileInputStream(allFiles[i]));     
+				try{
+					   
                                         int count = src.available();//numero totale di byte del file
                                         byte[] buffer = new byte[count]; 
                                         int numBytes = src.read(buffer);//numero di byte letti 
                                         outSock.write(buffer, 0, numBytes);//invio numbytes al server
                                         System.out.println("Numero di byte trasferiti: " + numBytes); 
 
+                                    }catch (EOFException e) {
+                                        System.out.println("Problemi, i seguenti: ");
+                                        e.printStackTrace();
                                     }
-			                        outSock.flush();
+			         outSock.flush();
 			                    }catch(IOException io){
 			                        System.out.println("Non sono riuscito a trasferire il file!");
 			                        io.printStackTrace();
