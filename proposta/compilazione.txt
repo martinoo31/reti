@@ -1,4 +1,0 @@
-Compilazione Server
-gcc gcc -I /usr/include/tirpc  proposta_proc.c  proposta_svc.c proposta_xdr.c -o proposta_server -ltirpc
-Compilazione Client
-gcc -I /usr/include/tirpc  proposta_client.c  proposta_clnt.c proposta_xdr.c -o proposta_client -ltirpc
